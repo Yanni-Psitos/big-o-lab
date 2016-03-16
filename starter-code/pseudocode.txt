@@ -6,7 +6,8 @@ func insertionSort( var a as array )
             if a[j] < a[j-1]
                 swap a[j] and a[j-1]
 end func
-
+                Big O: O(n^2)  The function above iterates through a single array, which means that the function is performing linearly and O(n^2).
+                
 Merge Sort:
 
 func mergeSort( var a as array )
@@ -20,7 +21,8 @@ func mergeSort( var a as array )
 
      return merge( l1, l2 )
 end func
-
+                Big O: O(n log(n))  The function above is a merge sort, so the 'divide and conquer' mentality is in play, meaning that its complexity and time-to-complete each segment makes it a logarithmic order (increases the time and dividing).
+                
 func merge( var a as array, var b as array )
      var c as array
 
@@ -39,7 +41,8 @@ func merge( var a as array, var b as array )
           remove b[0] from b
      return c
 end func
-
+               (Same as prev) Big O: O(n log(n))  The function above is a merge sort, so the 'divide and conquer' mentality is in play, meaning that its complexity and time-to-complete each segment makes it a logarithmic order (increases the time and dividing).
+                
 Selection Sort:
 
 int i,j;
@@ -64,7 +67,8 @@ for (j = 0; j < n-1; j++) {
         swap(a[j], a[iMin]);
     }
 }
-
+                Big O: O(n^2): The function above is a selection sort and uses a for loop nested within a for loop, making it quadratic and n^2.
+                
 Quick Sort:
 
 func quicksort(var a as array, var low as int, var high as int){
@@ -86,3 +90,6 @@ func partition(var a as array, var low as int, var high as int){
     swap(a[low], a[leftwall])
 
     return (leftwall)
+
+                Big O: O(n^2): The function above is a quick sort, and in quick sorts the typical Big O is O(n log(n)) (because of the binary tree and partitioning), however, in the worst case scenario if there is only one single element being parititioned against another single element, then its n * n, being the worst case(and quadratic). 
+                
